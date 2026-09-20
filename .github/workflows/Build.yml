@@ -21,13 +21,11 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
-
-      - name: Install Android SDK components
-        run: |
-          sdkmanager "platform-tools" \
-            "platforms;android-32" \
-            "build-tools;32.0.0" \
-            "ndk;24.0.8215888" \
+        with:
+          packages: >-
+            "platforms;android-32"
+            "build-tools;32.0.0"
+            "ndk;24.0.8215888"
             "cmake;3.22.1"
 
       - name: Grant execute permission
